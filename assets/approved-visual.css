@@ -1,0 +1,149 @@
+/* IMAGE 1 supplies only the cropped visual. IMAGE 2 guides native HTML composition. */
+body {
+  background: radial-gradient(ellipse at 15% 12%, #003f4929, transparent 42rem),
+    radial-gradient(ellipse at 100% 2%, #003b4029, transparent 42rem), #050708;
+}
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.site-header {
+  position: relative; z-index: 2; padding-block: 7px;
+  background: linear-gradient(100deg, #040d11e8, #031115e8);
+  border-bottom-color: #15404733;
+}
+.header-inner { direction: ltr; gap: 32px; }
+.header-inner .brand { margin: 0; }
+.site-header .brand img { width: 168px; }
+.header-inner .nav { margin-inline: auto; }
+html[lang=ar] .nav { direction: rtl; }
+html[lang=en] .nav { direction: ltr; }
+.nav a { position: relative; padding-block: 13px; }
+.nav [aria-current=page]:after {
+  content: ''; position: absolute; bottom: 3px; inset-inline: 0;
+  height: 2px; border-radius: 2px; background: var(--teal);
+}
+.language { border-radius: 24px; padding: 4px 19px; min-width: 72px; border-color: #416168; }
+.cinematic-hero { padding: 0; }
+.cinematic-hero:before {
+  background: radial-gradient(ellipse at 70% 60%, #0047441c, transparent 65%),
+    linear-gradient(165deg, #06151a55, transparent 55%);
+}
+.cinematic-layout {
+  position: relative; width: 100%; max-width: 1600px; display: grid;
+  grid-template-columns: 46% 54%; align-items: center; gap: 0;
+  direction: rtl; isolation: isolate;
+}
+.cinematic-copy {
+  grid-column: 1; grid-row: 1; position: relative; z-index: 1; padding-block: 40px;
+  padding-right: max(28px, calc((100vw - 1200px) / 2)); padding-left: 15px;
+  text-align: right; min-width: 0;
+}
+.cinematic-copy .eyebrow { font-size: 1rem; font-weight: 400; letter-spacing: 0; color: var(--secondary-text); margin-bottom: 20px; }
+.cinematic-copy .eyebrow bdi { color: var(--teal); font-weight: 600; }
+.cinematic-copy h1 { font-size: clamp(2.3rem, 3.65vw, 3.65rem); line-height: 1.55; letter-spacing: -.035em; }
+.cinematic-copy h1 .accent { font-size: 1.12em; }
+.hero-description { color: var(--secondary-text); margin-top: 24px; font-size: 1.14rem; line-height: 1.9; max-width: 565px; }
+.cinematic-copy .actions { margin-top: 29px; gap: 16px; }
+.cinematic-copy .button { min-height: 56px; padding: 10px 28px; border-radius: 15px; }
+.cinematic-copy .button:first-child { min-width: 215px; }
+.cinematic-copy .button.secondary { min-width: 135px; border-color: var(--deep); background: #030d1180; }
+.cinematic-copy .small-note { font-size: .76rem !important; line-height: 1.9; margin-top: 19px !important; color: var(--muted) !important; }
+.cta-arrow { font-size: 1.5rem; line-height: 1; }
+.cinematic-visual {
+  position: relative; grid-column: 2; grid-row: 1; z-index: 0; width: 100%;
+  direction: ltr; min-width: 0;
+  pointer-events: none;
+}
+.visual-blend {
+  width: 100%; min-height: 0;
+  mask-image: linear-gradient(to right, #000 84%, transparent 100%), linear-gradient(to bottom, #000 93%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, #000 84%, transparent 100%), linear-gradient(to bottom, #000 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+}
+.visual-blend img { width: 100%; height: auto; }
+.cinematic-visual figcaption { text-align: center; color: var(--muted); font-size: .65rem; line-height: 1.7; padding: 2px 35px 0; }
+html[lang=en] .cinematic-copy { direction: ltr; text-align: left; }
+html[lang=en] .cinematic-copy h1 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); line-height: 1.18; letter-spacing: -.04em; }
+html[lang=en] .cinematic-copy h1 .accent { font-size: 1em; }
+html[lang=en] .hero-description { line-height: 1.65; }
+html[lang=en] .cta-arrow { transform: rotate(180deg); }
+.shortcut-features { position: relative; z-index: 1; padding-bottom: 55px; scroll-margin-top: 28px; }
+.feature-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.feature {
+  padding: 20px 13px; text-align: center; border: 1px solid #00b8ae41;
+  border-radius: 20px; background: linear-gradient(145deg, #07171ccf, #030a0cb8);
+  box-shadow: inset 0 1px #19f0e204; min-width: 0;
+}
+.feature svg { display: block; margin: 0 auto 12px; width: 34px; height: 34px; stroke-width: 1.7; }
+.feature h3 { font-size: 1.04rem; line-height: 1.6; }
+.feature p { font-size: .87rem; line-height: 1.85; color: var(--secondary-text); margin-top: 5px; }
+html[lang=en] .feature h3 { font-size: .95rem; }
+html[lang=en] .feature p { font-size: .82rem; line-height: 1.6; }
+.privacy-band {
+  background: radial-gradient(ellipse at 0 50%, #0056501c, transparent 70%), linear-gradient(110deg, #09151b, #0a0d0f);
+  border-color: #19353b;
+}
+.page-heading { margin-top: 32px; padding: 32px; background: linear-gradient(115deg, #0b1f28, #0a0d0f); border: 1px solid #1d383f; border-radius: 18px; }
+.page-heading h1 { font-size: clamp(2.1rem, 3.8vw, 3.3rem); }
+.callout { background: #0a1a20; }
+.faq details { border-color: #213a41; }
+.legal, .site-footer { border-color: #1b3138; }
+.site-footer { background: #071014; }
+@media (min-width: 1600px) {
+  .cinematic-hero { padding: 0; }
+  .cinematic-copy { padding-right: 70px; }
+}
+@media (max-width: 1100px) {
+  .cinematic-layout { grid-template-columns: 48% 52%; }
+  .cinematic-copy h1 { font-size: 2.35rem; }
+  .hero-description { font-size: 1rem; }
+  .cinematic-copy .actions { gap: 10px; }
+  .cinematic-copy .button { padding-inline: 20px; }
+  .cinematic-copy .button:first-child { min-width: 180px; }
+  .cinematic-copy .button.secondary { min-width: 110px; }
+  .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 850px) {
+  .cinematic-layout { display: flex; flex-direction: column; gap: 0; width: calc(100% - 56px); }
+  .cinematic-copy { width: min(100%, 630px); padding: 42px 0 20px; }
+  .cinematic-copy h1 { font-size: 2.7rem; }
+  .cinematic-visual { width: min(760px, calc(100% + 56px)); margin-top: -5px; }
+  .visual-blend { mask-image: linear-gradient(to bottom, #000 94%, transparent); -webkit-mask-image: linear-gradient(to bottom, #000 94%, transparent); }
+  .cinematic-visual figcaption { padding-bottom: 22px; }
+  .cinematic-copy .small-note { max-width: 570px; }
+  .shortcut-features { padding-bottom: 45px; }
+  .header-inner { gap: 16px; }
+  .nav { gap: 20px; }
+  .site-header .brand img { width: 145px; }
+}
+@media (max-width: 650px) {
+  .header-inner { flex-wrap: wrap; gap: 4px 20px; }
+  .header-inner .language { margin-inline-start: auto; }
+  .header-inner .nav { order: 3; width: 100%; padding-block: 0 5px; margin: 0; justify-content: space-between; gap: 12px; }
+  .nav a { padding-block: 8px; }
+  .site-header .brand img { width: 140px; }
+  .cinematic-hero { padding: 0; }
+  .cinematic-layout { width: calc(100% - 40px); }
+  .cinematic-copy { padding-block: 30px 18px; }
+  .cinematic-copy .eyebrow { font-size: .85rem; margin-bottom: 15px; }
+  .cinematic-copy h1 { font-size: clamp(1.9rem, 7.5vw, 2.6rem); line-height: 1.6; letter-spacing: -.025em; }
+  html[lang=en] .cinematic-copy h1 { font-size: clamp(2rem, 8.5vw, 2.7rem); line-height: 1.2; }
+  .hero-description { margin-top: 18px; font-size: 1rem; }
+  .cinematic-copy .actions { margin-top: 22px; }
+  .cinematic-copy .button { min-height: 52px; padding: 9px 18px; font-size: .9rem; border-radius: 13px; }
+  .cinematic-copy .button:first-child { min-width: 0; flex: 1; }
+  .cinematic-copy .button.secondary { min-width: 92px; }
+  .cinematic-copy .small-note { font-size: .74rem !important; }
+  .cinematic-visual { width: calc(100% + 40px); margin-top: 0; }
+  .visual-blend { width: 100%; }
+  .visual-blend img { height: auto; width: 100%; }
+  .cinematic-visual figcaption { font-size: .62rem; padding: 7px 20px 25px; }
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .feature { padding: 20px 12px; border-radius: 16px; }
+  .feature h3 { font-size: 1rem; }
+  .feature p { font-size: .85rem; }
+  .page-heading { margin-top: 24px; padding: 24px 20px; }
+}
+@media print { body { background: white; } .page-heading { background: transparent; } }
