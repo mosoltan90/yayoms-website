@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#050708">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://yayoms-tv-pairing.joesultan16.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>YAYOMS — ربط التلفزيون</title>
+  <link rel="icon" href="/assets/yayoms-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="./link.css">
+  <script type="module" src="./link.mjs"></script>
+</head>
+<body>
+  <header><a href="/" aria-label="YAYOMS"><img src="/assets/yayoms-logo.png" alt="YAYOMS" width="162" height="62"></a><button id="language" type="button" class="language">English</button></header>
+  <main>
+    <h1 data-text="title">تسجيل الدخول إلى التلفزيون</h1>
+    <p class="intro" data-text="intro">أدخل بيانات مصدر IPTV الخاص بك لإرسالها بأمان إلى تلفزيونك.</p>
+    <section class="card">
+      <p id="status" role="status" aria-live="polite"></p>
+      <form id="pair-form" novalidate>
+        <label for="code" data-text="codeLabel">رمز الربط الظاهر على التلفزيون</label>
+        <input id="code" dir="ltr" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" placeholder="ABCDE-FGHIJ-KLMNO-PQRST" required>
+        <button id="connect" type="submit" class="button" data-text="connect">الاتصال بالتلفزيون</button>
+      </form>
+      <section id="target" hidden>
+        <h2 data-text="targetTitle">تأكد من التلفزيون</h2>
+        <p id="device"></p>
+        <p><span data-text="codeLabel">رمز الربط الظاهر على التلفزيون</span>: <b id="target-code" dir="ltr"></b></p>
+        <p><span data-text="verification">بصمة الأمان</span>: <b id="fingerprint" dir="ltr"></b></p>
+        <p data-text="verifyHelp">قارن رمز الربط وبصمة الأمان مع التلفزيون قبل الإرسال.</p>
+        <p id="countdown" dir="ltr"></p>
+      </section>
+      <form id="credentials" novalidate hidden autocomplete="off">
+        <label for="server" data-text="server">رابط خادم IPTV</label>
+        <input id="server" type="url" dir="ltr" inputmode="url" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="2048" placeholder="http://provider.example:8080" required>
+        <label for="username" data-text="username">اسم المستخدم</label>
+        <input id="username" dir="ltr" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="256" required>
+        <label for="password" data-text="password">كلمة المرور</label>
+        <div class="password"><input id="password" type="password" dir="ltr" autocomplete="off" maxlength="1024" required><button id="visibility" type="button" data-text="show" aria-pressed="false">إظهار</button></div>
+        <label class="confirm"><input id="confirmed" type="checkbox" required><span data-text="confirm">تأكدت أن رمز الربط وبصمة الأمان يطابقان تلفزيوني.</span></label>
+        <button id="send" type="submit" class="button" data-text="send">إرسال إلى التلفزيون</button>
+      </form>
+      <p id="retry" hidden data-text="retry">ارجع إلى شاشة التلفزيون واختر تحديث الرمز، ثم امسح رمز QR الجديد.</p>
+    </section>
+    <p class="note" data-text="privacy">تُشفّر البيانات لهذا التلفزيون فقط، ولا تُحفظ في الموقع. يتم تسجيل الدخول لدى مزوّدك على التلفزيون.</p>
+    <noscript>JavaScript is required. يلزم تشغيل JavaScript لربط التلفزيون بأمان.</noscript>
+  </main>
+</body>
+</html>
