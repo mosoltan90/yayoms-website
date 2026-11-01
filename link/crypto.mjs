@@ -10,7 +10,9 @@ export function validateCredentials(serverUrl,username,password) {
   if(!/^https?:$/.test(url.protocol)||!url.hostname||url.username||url.password||url.search||url.hash||/[\s\\]/.test(server)||url.port==='0')throw new Error('URL');
   if(!username.trim()||!password.trim())throw new Error('REQUIRED');
   if(server.length>2048||username.length>256||password.length>1024)throw new Error('SIZE');
-  return {serverUrl:server,username:username.trim(),password};
+  const credentials={serverUrl:server,username:username.trim(),password};
+  if(new TextEncoder().encode(JSON.stringify(credentials)).length>4400)throw new Error('SIZE');
+  return credentials;
 }
 export async function encryptCredentials(publicKey, code, credentials) {
   const key=await crypto.subtle.importKey('spki',bytes(publicKey),{name:'RSA-OAEP',hash:'SHA-256'},false,['encrypt']);
